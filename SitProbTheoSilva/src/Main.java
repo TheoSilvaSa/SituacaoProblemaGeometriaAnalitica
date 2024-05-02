@@ -6,7 +6,12 @@ public class Main {
 	public static void main(String[] args) {
 		
 		int x1, x2, x3, y1, y2, y3;
+		char resp = 'Y';
 		
+		Scanner scanner = new Scanner(System.in);
+		
+		do {
+			
 		System.out.println("Informe as coordenada do ponto A(x1 ,y1)");
 		System.out.print("x1: ");
 		x1 = readInt();
@@ -26,11 +31,18 @@ public class Main {
 		y3 = readInt();
 			
 		if (determinante(x1,x2,x3,y1,y2,y3)==0) {
-			System.out.printf("os pontos são colineares e a distância entre o ponto A("+x1+","+y1+") e o ponto B("+x2+","+y2+") é "+new DecimalFormat(".##").format(distancia(x1,x2,y1,y2)));
+			System.out.printf("os pontos são colineares e a distância entre o ponto A("+x1+","+y1+") e o ponto B("+x2+","+y2+") é "+new DecimalFormat(".##").format(distancia(x1,x2,y1,y2))+"\n");
 		}
 		else {
 			System.out.println("Os pontos não estão alinhados. Pois o determinante é igual a " +determinante(x1,x2,x3,y1,y2,y3));
 		}
+		
+		System.out.println("Deseja informar novos pontos? (y,n)");
+		resp = scanner.next().charAt(0);
+		
+		} while(resp == 'Y' || resp == 'y');
+		
+		scanner.close();
 		
 	}
 	
