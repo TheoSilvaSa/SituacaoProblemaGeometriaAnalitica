@@ -29,7 +29,7 @@ public class Main {
 			System.out.printf("os pontos são colineares e a distância entre o ponto A("+x1+","+y1+") e o ponto B("+x2+","+y2+") é "+new DecimalFormat(".##").format(distancia(x1,x2,y1,y2)));
 		}
 		else {
-			System.out.println("Os pontos não estão alinhados.");
+			System.out.println("Os pontos não estão alinhados. Pois o determinante é igual a " +determinante(x1,x2,x3,y1,y2,y3));
 		}
 		
 	}
